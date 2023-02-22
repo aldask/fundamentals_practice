@@ -129,5 +129,9 @@ Write a function that takes an array of numbers and returns the second highest n
 */
 
 const secondBiggest = (arr) => {
-    
+    const sorterArr = arr.sort((a, b) => b - a);
+    const secondLargest = sorterArr[1];
+    return console.log(secondLargest);
 }
+secondBiggest(randomArr);
+
