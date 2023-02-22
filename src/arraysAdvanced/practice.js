@@ -38,26 +38,96 @@ const letterTest = ["Test kiek tiek teikia" ];
 const letterRepeat = (arr, l) => {
     let newArr = arr.toString();
     newArr.split('');
-    newArr.forEach(element => {
-        if(element === l){
-            let count;
+    let count = 0;
+    for (let i = 0; i < newArr.length; i++){
+        if(l.toLowerCase() === newArr[i].toLowerCase()){
             count++;
-        };
-    });
+        }
+    }
     console.log(count);
 }
-letterRepeat(letterTest);
+letterRepeat(letterTest, "t");
+
+//Write a function that takes a number and returns a string that contains "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both 3 and 5. For all other numbers, the function should return the number as a string.
+const fizz = (num) => {
+    if(num % 3 === 0 && num % 5 === 0){
+        return "FizzBuzz";
+    } else if(num % 3 === 0){
+        return "Fizz";
+    } else if(num % 5 === 0){
+        return "Buzz";
+    } else {
+        return num.toString();
+    }
+    //console.log(count);
+}
+console.log(fizz(25));
+
+
+//Write a function that takes an array of strings and returns the longest string in the array.
+const stringTest = ["Array", "help", "nice"];
+
+const biggestString = (arr) => {
+    let newVar = '';
+    for(let i = 0; i < arr.length; i++){
+        if(newVar.length < arr[i].length){
+            newVar = arr[i];
+        }
+    }
+    return newVar;
+}
+console.log(biggestString(stringTest));
+
+
+//Write a function that takes an array of objects with name and age properties, and returns an array of names of people who are older than 18.
+const people = [
+    { name: 'Alice', age: 28 },
+    { name: 'Bob', age: 32 },
+    { name: 'Charlie', age: 20 },
+    { name: 'Oleg', age: 16 },
+    { name: 'David', age: 45 }
+];
+
+const olderThan18 = (arr) => {
+    let older = arr.filter(older => older.age > 18);
+    let newArr = older.map(older => older.name);
+
+    console.log(newArr);
+}
+olderThan18(people);
+
+///Write a function that takes a number and returns true if it is a prime number, and false otherwise.
+
+const prime = (num) => {
+    if(1 % num === 0){
+        return num, true;
+    } else return num, false;
+
+
+}
+console.log(prime(1));
+
+
+//Write a function that takes a string and returns a new string with all vowels removed.
+
+const randomArr1 = "Test, atsas asofdiskdf, wrtt";
+const vowels = (arr) => {
+    let split = arr.split('');
+    let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    for(let i = 0; i < split.length; i++){
+        if(vowels.includes(split[i])){
+            split.splice(i, 1);
+            i--;
+        }
+    }
+    return console.log(split.join(''));
+}
+vowels(randomArr1);
 
 /*
-Write a function that takes a number and returns a string that contains "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both 3 and 5. For all other numbers, the function should return the number as a string.
-
-Write a function that takes an array of strings and returns the longest string in the array.
-
-Write a function that takes an array of objects with name and age properties, and returns an array of names of people who are older than 18.
-
-Write a function that takes a number and returns true if it is a prime number, and false otherwise.
-
-Write a function that takes a string and returns a new string with all vowels removed.
-
 Write a function that takes an array of numbers and returns the second highest number in the array.
 */
+
+const secondBiggest = (arr) => {
+    
+}
