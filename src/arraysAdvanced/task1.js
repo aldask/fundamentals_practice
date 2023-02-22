@@ -242,12 +242,14 @@ const nArr = [
 const replace = (arr, a) => {
     let index = arr.findIndex(user => user.id === a.id);
     if(!index !== -1){
-        ////////needs to be done if true
+        arr.splice(index, 1, a)
     } else {
-        //////needs to be done when false
+        arr.push(a);
     }
+    return console.log(arr);
 }
-replace(nArr, 4);
+console.log("aaaaaaa");
+replace(nArr, {id: 3});
 
 
 
