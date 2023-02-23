@@ -15,11 +15,21 @@ Calling function with an argument: [{name: 'Tomas', age: 15}, {name: 'Erika', ag
 
 Function returns a map (or objects) where the key is name and value amount of people with such name: {Tomas: 3', Erika: 2, Audrius: 1}
 */
-const counts = (arr) => {
-    for(let i = 0; i < arr.length; i++){
-        let name = arr[i].name;
-        if(name )
+function countPeopleByName(peopleArray) {
+    const counts = {};
+    
+    for (let i = 0; i < peopleArray.length; i++) {
+      const person = peopleArray[i];
+      const name = person.name;
+      
+      if (counts[name]) {
+        counts[name]++;
+      } else {
+        counts[name] = 1;
+      }
     }
-};
+    
+    return counts;
+  }
 
-counts([{name: 'Tomas', age: 15}, {name: 'Erika', age: 22}, {name: 'Tomas', age: 17}, {name: 'Audrius', age: 34}, {name: 'Erika', age: 42}, {name: 'Tomas', age: 19}]);
+console.log(countPeopleByName([{name: 'Tomas', age: 15}, {name: 'Erika', age: 22}, {name: 'Tomas', age: 17}, {name: 'Audrius', age: 34}, {name: 'Erika', age: 42}, {name: 'Tomas', age: 19}]));

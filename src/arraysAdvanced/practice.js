@@ -135,3 +135,84 @@ const secondBiggest = (arr) => {
 }
 secondBiggest(randomArr);
 
+//Write a function that takes an array of numbers and returns the sum of all the positive numbers in the array.
+
+const positiveSum = (arr) => {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] > 0){
+            sum += arr[i];
+        }
+    }
+    console.log("test");
+    return console.log(sum);
+}
+positiveSum(randomArr);
+
+//Write a function that takes an array of objects and returns an array of objects sorted by a specified property (e.g. age, name, date).
+
+const users = [
+    { id: 1, name: "Alice", age: 25 },
+    { id: 2, name: "Bob", age: 30 },
+    { id: 3, name: "Charlie", age: 20 }
+];
+
+const sortUsers = (arr, x) => {
+    return arr.sort((a, b) => {
+        if(a[x] < b[x]){
+            return 1;
+        } else if(a[x] > b[x]){
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+}
+
+console.log(sortUsers(users, "id"));
+//Write a function that takes two arrays and returns a new array with elements that are in both of the input arrays.
+
+const intersect = (arr1, arr2) => {
+    return arr1.filter(elem => arr2.includes(elem));
+};
+
+console.log(intersect(users, randomArr1));
+
+//Write a function that takes an array of objects and returns the object with the highest value for a specified property (e.g. age, salary, rating).
+
+//const highestValue = (arr, value) => {
+  //  return arr.filter(obj => Math.max(obj.value));
+//};
+console.log('test');
+//console.log(highestValue(users, "age"));
+
+//Write a function that takes an array of objects and a property name, and returns a new array of objects sorted by that property in ascending order.
+
+const sss = (aa, propName) => {
+    let sort = aa.sort((a, b) => {
+        if(a[propName] < b[propName]){
+            return -1;
+        } else if (a[propName] > b[propName]){
+            return 1;
+        } else {
+            return 0;
+        }
+    })
+    return sort;
+};
+
+console.log(sss(users, "age"));
+
+//Write a function that takes an array of objects and a property name, and returns the object with the lowest value for that property.
+
+const lowestValue = (arr, propName) => {
+    let lovestValue = arr[0];
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i][propName] < lovestValue){
+            lovestValue = arr[i];
+        }
+    }
+    return lovestValue;
+};
+
+console.log(lowestValue(users, "age"));

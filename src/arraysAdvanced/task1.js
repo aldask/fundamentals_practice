@@ -239,17 +239,17 @@ const nArr = [
     {id: 5}
 ];
 
-const replace = (arr, a) => {
-    let index = arr.findIndex(user => user.id === a.id);
-    if(!index !== -1){
-        arr.splice(index, 1, a)
+const replaceObj = (arr, rObj) => {
+    let index = arr.filter(obj => obj.id === rObj.id);
+    if(index !== -1){
+        arr.splice(index, 1, rObj);
     } else {
-        arr.push(a);
+        arr.push(rObj);
     }
-    return console.log(arr);
-}
-console.log("aaaaaaa");
-replace(nArr, {id: 3});
+    return arr;
+};
+
+console.log(replaceObj(nArr, {id: 3}));
 
 
 
