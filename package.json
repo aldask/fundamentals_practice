@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node",
+    "prestart": "npx tsc",
     "type": "module"
   },
   "repository": {
@@ -12,5 +13,8 @@
     "url": "githubhttps://github.com/aldask/fundamentals_practice"
   },
   "author": "Aldas",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }
